@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=/home/jay/bin/eclipse-php-start.run
+Icon=/home/jay/.config/docker/eclipse/php/icon.xpm
+Type=Application
+Terminal=false
+GenericName=Eclipse-PHP
+Name=EclipsePHP
+StartupNotify=false
+Categories=Development
