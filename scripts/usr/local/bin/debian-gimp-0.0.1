@@ -2,37 +2,37 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-eclipse-php
-#	  Sample run script for ewsdocker/debian-eclipse-php
+#	debian-gimp
+#	  Sample run script for ewsdocker/debian-gimp
 #
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 0.0.6
+# @version 0.0.1
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
-# @package ewsdocker/debian-eclipse-php
-# @subpackage debian-eclipse-php.run
+# @package ewsdocker/debian-gimp
+# @subpackage debian-gimp
 #
 # =========================================================================
 #
 #	Copyright © 2018. EarthWalk Software
 #	Licensed under the GNU General Public License, GPL-3.0-or-later.
 #
-#   This file is part of ewsdocker/debian-eclipse-php.
+#   This file is part of ewsdocker/debian-gimp.
 #
-#   ewsdocker/debian-eclipse-php is free software: you can redistribute 
+#   ewsdocker/debian-gimp is free software: you can redistribute 
 #   it and/or modify it under the terms of the GNU General Public License 
 #   as published by the Free Software Foundation, either version 3 of the 
 #   License, or (at your option) any later version.
 #
-#   ewsdocker/debian-eclipse-php is distributed in the hope that it will 
+#   ewsdocker/debian-gimp is distributed in the hope that it will 
 #   be useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
 #   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #   GNU General Public License for more details.
 #
 #   You should have received a copy of the GNU General Public License
-#   along with ewsdocker/debian-eclipse-php.  If not, see 
+#   along with ewsdocker/debian-gimp.  If not, see 
 #   <http://www.gnu.org/licenses/>.
 #
 # =========================================================================
@@ -41,10 +41,10 @@
 docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
-           -v /etc/localtime:/etc/localtime,readonly \
-           -v ${HOME}/.config/docker/eclipse/php:/root \
-           -v /media/dev-2018/git/ewsdocker:/project \
-           -v /media/dev-2018:/source \
-           -v /media/dev-2018/workspace:/workspace \
-           --name=debian-eclipse-php-1.1.9 \
-       ewsdocker/debian-eclipse-php:1.1.9
+           -v /etc/localtime:/etc/localtime:ro \
+           -v ${HOME}/.config/docker/gimp:/root \
+           -v ${HOME}/Pictures:/pictures \
+           -v ${HOME}/workspace:/workspace \
+           -v /media/sf_Stories:/artwork \
+           --name=debian-gimp-0.0.1 \
+       ewsdocker/debian-gimp:0.0.1

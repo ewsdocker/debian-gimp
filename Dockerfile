@@ -53,7 +53,39 @@ ENV LMSBUILD_PACKAGE="gimp 5.2.11"
 RUN apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
+               alsa-utils \
+               cups-common \
+               fonts-droid-fallback \
+               gcc \
+               gfortran \
+               ghostscript \
                gimp \
+               gimp-data-extras \
+               gimp-help-common \
+               gimp-help-en \
+               gpm \
+               gsfonts \
+               gvfs \
+               gvfs-backends \
+               libaacs0 \
+               libasound2-plugins \
+               libbluray-bdj \
+               libcupsfilters1 \
+               libgail-common \
+               libgtk2.0-bin \
+               liblcms2-utils \
+               libpaper-utils \
+               librsvg2-bin \
+               opus-tools \
+               poppler-utils \
+               pulseaudio \
+               python-dev \
+               python-gobject-2-dbg \
+               python-gtk2-doc \
+               python-nose \
+               python-numpy-dbg \
+               python-numpy-doc \
+               speex \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
 
 # =========================================================================
@@ -66,9 +98,8 @@ RUN chmod +x /usr/bin/lms/* \
 
 # =========================================================================
 
-VOLUME /library
-VOLUME /source
-VOLUME /userbin
+VOLUME /artwork
+VOLUME /pictures
 VOLUME /workspace
 
 WORKDIR /workspace
@@ -76,4 +107,4 @@ WORKDIR /workspace
 # =========================================================================
 
 ENTRYPOINT ["/my_init", "--quiet"]
-CMD ["/bin/bash"]
+CMD ["gimp"]
