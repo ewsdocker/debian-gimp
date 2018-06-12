@@ -42,7 +42,7 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/docker/gimp:/root \
+           -v ${HOME}/.config/docker/debian-gimp:/root \
            -v ${HOME}/Pictures:/pictures \
            -v ${HOME}/workspace:/workspace \
            -v /media/sf_Stories:/artwork \
