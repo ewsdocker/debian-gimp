@@ -97,7 +97,7 @@ COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-gimp-"${LMSBUILD_VERSION}".desktop  
+ && chmod 600 /usr/local/share/applications/debian-gimp-9.5.3.desktop  
 
 # =========================================================================
 
