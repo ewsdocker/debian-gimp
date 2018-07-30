@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/home/jay/.local/bin/docker-deb-start-0.0.1 debian-gimp-0.0.2
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.2 debian-gimp:9.5.3
 Icon=/home/jay/.local/share/icons/gimp.png
 Type=Application
 Terminal=false
