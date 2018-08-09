@@ -92,7 +92,7 @@ ____
 
 **ewsdocker/debian-gimp:edge**  
 
-**edge** is the **Docker** tag for the **GitHub** development version, and future **Docker** release tag, **9.5.4**.
+**edge** is the **Docker** tag for the **GitHub** development version, and future **Docker** release tag, **9.5.4**.  
 
     docker pull ewsdocker/debian-gimp:edge
     docker tag ewsdocker/debian-gimp:edge ewsdocker/debian-gimp:9.5.4
