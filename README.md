@@ -1,39 +1,118 @@
-## ewsdocker/debian-gimp  
+### ewsdocker/debian-gimp  
 
-__Gimp in a Debian Docker image.__  
-
-## NOTE
-
-**ewsdocker/debian-gimp** is designed to be used on a Linux system configured to support **Docker** __user namespace__s.  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and additional information.  
+**Gimp (complete) in a Debian-based Docker image.**  
 
 ____  
 
-## ewsdocker/debian-gimp Wiki  
-
-Please visit our [ewsdocker/debian-gimp Wiki](https://github.com/ewsdocker/debian-gimp/wiki/QuickStart) for complete documentation of this docker image.  
+**NOTE**  
+**ewsdocker/debian-gimp** is designed to be used on a Linux system configured to support **Docker user namespaces** .  Refer to [ewsdocker Containers and Docker User Namespaces](https://github.com/ewsdocker/ewsdocker.github.io/wiki/UserNS-Overview) for an overview and information on running **ewsdocker/debian-gimp** on a system not configured for **Docker user namespaces**.
 ____  
 
-### About Docker Versions  
+**Visit the [ewsdocker/debian-gimp Wiki](https://github.com/ewsdocker/debian-gimp/wiki/QuickStart) for complete documentation of this docker image.**  
+____  
 
-Find out all that you need to know about the docker Tags, and the version of Eclipse PHP represented, at [Docker Tags](https://github.com/ewsdocker/debian-gimp/wiki/DockerTags).  
-_____________________  
+**About the size of the image**  
 
-**docker pull** will pull the **latest** image by default.  
+The main design specifications of the **ewsdocker** desktop application images are:  
 
-The Docker **edge** tag is based on the GitHub **master** source, which is the development version, and should be assumed to be **unstable**.  
+  - Provide the same desktop experience as the user would have on a full application installation on a host desktop (including desktop menu interface, audio, video, multimedia, ...);  
+  - Install the latest release directly from the software vendor's repository, or a certified mirror, reducing dependencies on host operating system implementations of the application;  
+  - Leverage **Docker** container capabilities to  
+   + provide isolation of the **Docker** container applications from the **Docker** host;  
+   + provide persistence of application settings between **docker run** commands, and between future releases, allowing fast container deletion and re-creation; and  
+   + quickly perform container replications, container updates, and recovery from software malfunction/corruption.  
 
-Other Docker versions (or tags) can be selected on the Docker [Tags](https://hub.docker.com/r/ewsdocker/debian-gimp/tags/) page. 
+Most of the **ewsdocker** desktop application images are based on the latest **Debian** docker image, since fewer problems have been encountered when implementing the desktop applications on that platform.  
 
-GitHub source branches and tags, if there are any, can be selected in the **Branch / Tag** selection box.  
+Obviously, these **Docker** images tend to be rather large compared to most **Docker** images. It may take a bit longer to download, but the convenience of having the application in a **docker image** is worth the small, (usually) one time investment in download time.  
 
-NOTE: If the _New Version_ version number is not in the **Tags**, the **edge** tag is still under test.  Testing will be complete when the _New Version_ tag exists, and the **edge** tag with the _New Version_ does <i>NOT</i> exist.
+____  
 
-An explanation of the [Docker Tags](https://github.com/ewsdocker/debian-gimp/wiki/DockerTags) is available on the [ewsdocker/debian-gimp Wiki](https://github.com/ewsdocker/debian-gimp/wiki).
-____
+**Installing ewsdocker/debian-gimp**  
 
-### Overview  
+The following scripts will download the the selected **ewsdocker/debian-gimp** image, create a container, setup and populate the directory structures, create the run-time scripts, and install the application's desktop file(s).  
 
-**ewsdocker/debian-gimp** is built upon **ewsdocker/debian-base-gui:latest** and provides the current _Eclipse PDT_ version and _Php 5.6_ in a Docker image.  
+The _default_ values will install all directories and contents in the user's home directory on the **Docker host** (refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-gimp/wiki/QuickStart#mapping)),  
+
+**ewsdocker/debian-gimp:9.5.3**  
+  
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-gimp-9.5.3:/root \
+               --name=debian-gimp-9.5.3 \
+           ewsdocker/debian-gimp:9.5.3 lms-setup  
+
+____  
+
+Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-gimp/wiki/QuickStart#mapping) for a discussion of **lms-setup** and what it does.  
+
+____  
+
+**Running the installed scripts**
+
+After running the above command script, and using the settings indicated, the docker host directories, mapped as shown in the above tables, will be configured as follows:
+
++ the executable scripts have been copied to **~/bin**;  
++ the application desktop file(s) have been copied to **~/.local/share/applications**, and are availablie in any _task bar_ menu;  
++ the associated **debian-gimp-"version"** executable script (shown below) will be found in **~/.local/bin**, and _should_ be customized with proper local volume names;  
+
+____  
+
+**Executable scripts**  
+
+**ewsdocker/debian-gimp:9.5.3**
+  
+    docker run -v /etc/localtime:/etc/localtime:ro \
+           -e DISPLAY=unix${DISPLAY} \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+           -v ${HOME}/Documents:/documents \
+           -v ${HOME}/Stories:/stories \
+           -v ${HOME}/.config/docker/debian-gimp-9.5.3:/root \
+           --name=debian-gimp-9.5.3 \
+       ewsdocker/debian-gimp:9.5.3  
+
+____  
+Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-gimp/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
+
+____  
+
+**Bleeding-edge Testing**  
+
+The _bleeding-edge_ development tag **edge** is the next **Docker** tag release.  This means that, during its lifetime, the **edge** source will undergo many modifications before it becomes useful.  
+
+For the _very brave_, if an _edge_ tag is available, the following  instructions will download, rename and install the _edge_ version.  
+
+Good luck.  Please remember that just because it is named **9.5.4** does **not** mean that it is no longer bleeding-**edge**. Don't expect it to work.
+
+____  
+
+**ewsdocker/debian-gimp:edge**  
+
+**edge** is the **Docker** tag for the **GitHub** development version, and future **Docker** release tag, **9.5.4**.
+
+    docker pull ewsdocker/debian-gimp:edge
+    docker tag ewsdocker/debian-gimp:edge ewsdocker/debian-gimp:9.5.4
+    docker run --rm \
+               -v ${HOME}/bin:/userbin \
+               -v ${HOME}/.local:/usrlocal \
+               -e LMS_BASE="${HOME}/.local" \
+               -v ${HOME}/.config/docker:/conf \
+               -v ${HOME}/.config/docker/debian-gimp-9.5.4:/root \
+               --name=debian-gimp-9.5.4 \
+           ewsdocker/debian-gimp:9.5.4 lms-setup  
+
+optional step (clean up the **docker images**):
+
+    docker rmi ewsdocker/debian-gimp:edge  
+
+To create and run the container, run **LibreOffice 9.5.4** from the _Office_ category of any desktop menu, or the following should work from the command-line:
+
+    ~/.local/bin/debian-gimp:9.5.4  
+
 ____  
 
 **Copyright © 2018. EarthWalk Software.**  
@@ -54,4 +133,4 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with **ewsdocker/debian-gimp**.  If not, see 
 <http://www.gnu.org/licenses/>.  
-____  
+
