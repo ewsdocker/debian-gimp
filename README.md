@@ -34,16 +34,16 @@ The following scripts will download the the selected **ewsdocker/debian-gimp** i
 
 The _default_ values will install all directories and contents in the user's home directory on the **Docker host** (refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-gimp/wiki/QuickStart#mapping)),  
 
-**ewsdocker/debian-gimp:9.5.3**  
+**ewsdocker/debian-gimp:9.5.4**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.3:/root \
-               --name=debian-gimp-9.5.3 \
-           ewsdocker/debian-gimp:9.5.3 lms-setup  
+               -v ${HOME}/.config/docker/debian-gimp-9.5.4:/root \
+               --name=debian-gimp-9.5.4 \
+           ewsdocker/debian-gimp:9.5.4 lms-setup  
 
 ____  
 
@@ -63,7 +63,7 @@ ____
 
 **Executable scripts**  
 
-**ewsdocker/debian-gimp:9.5.3**
+**ewsdocker/debian-gimp:9.5.4**
   
     docker run -v /etc/localtime:/etc/localtime:ro \
            -e DISPLAY=unix${DISPLAY} \
@@ -71,9 +71,9 @@ ____
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v ${HOME}/Documents:/documents \
            -v ${HOME}/Stories:/stories \
-           -v ${HOME}/.config/docker/debian-gimp-9.5.3:/root \
-           --name=debian-gimp-9.5.3 \
-       ewsdocker/debian-gimp:9.5.3  
+           -v ${HOME}/.config/docker/debian-gimp-9.5.4:/root \
+           --name=debian-gimp-9.5.4 \
+       ewsdocker/debian-gimp:9.5.4  
 
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-gimp/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
@@ -86,32 +86,32 @@ The _bleeding-edge_ development tag **edge** is the next **Docker** tag release.
 
 For the _very brave_, if an _edge_ tag is available, the following  instructions will download, rename and install the _edge_ version.  
 
-Good luck.  Please remember that just because it is named **9.5.4** does **not** mean that it is no longer bleeding-**edge**. Don't expect it to work.
+Good luck.  Please remember that just because it is named **9.5.5** does **not** mean that it is no longer bleeding-**edge**. Don't expect it to work.
 
 ____  
 
 **ewsdocker/debian-gimp:edge**  
 
-**edge** is the **Docker** tag for the **GitHub** development version, and future **Docker** release tag, **9.5.4**.  
+**edge** is the **Docker** tag for the **GitHub** development version, and future **Docker** release tag, **9.5.5**.  
 
     docker pull ewsdocker/debian-gimp:edge
-    docker tag ewsdocker/debian-gimp:edge ewsdocker/debian-gimp:9.5.4
+    docker tag ewsdocker/debian-gimp:edge ewsdocker/debian-gimp:9.5.5
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.4:/root \
-               --name=debian-gimp-9.5.4 \
-           ewsdocker/debian-gimp:9.5.4 lms-setup  
+               -v ${HOME}/.config/docker/debian-gimp-9.5.5:/root \
+               --name=debian-gimp-9.5.5 \
+           ewsdocker/debian-gimp:9.5.5 lms-setup  
 
 optional step (clean up the **docker images**):
 
     docker rmi ewsdocker/debian-gimp:edge  
 
-To create and run the container, run **LibreOffice 9.5.4** from the _Office_ category of any desktop menu, or the following should work from the command-line:
+To create and run the container, run **LibreOffice 9.5.5** from the _Office_ category of any desktop menu, or the following should work from the command-line:
 
-    ~/.local/bin/debian-gimp:9.5.4  
+    ~/.local/bin/debian-gimp:9.5.5  
 
 ____  
 

@@ -36,7 +36,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.1
+FROM ewsdocker/debian-base-gui:9.5.2
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -48,8 +48,9 @@ ENV LMSBUILD_NAME=debian-gimp
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
+ENV LMSBUILD_PARENT="gimp 5.2.11"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="gimp 5.2.11"
+ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-base-gui:9.5.2"
 
 # =========================================================================
 
@@ -75,7 +76,7 @@ RUN apt-get -y update \
                libbluray-bdj \
                libcupsfilters1 \
                libgail-common \
-               libgtk2.0-bin \
+               libgtk-3-bin \
                liblcms2-utils \
                libpaper-utils \
                librsvg2-bin \
