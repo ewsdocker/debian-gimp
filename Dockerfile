@@ -36,7 +36,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.2
+FROM ewsdocker/debian-base-gui:9.5.3
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
@@ -50,7 +50,7 @@ ENV LMSBUILD_REGISTRY=""
 
 ENV LMSBUILD_PARENT="gimp 5.2.11"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-base-gui:9.5.2"
+ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-base-gui:9.5.3"
 
 # =========================================================================
 
