@@ -41,9 +41,9 @@ The _default_ values will install all directories and contents in the user's hom
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-gimp-latest:/root \
-               --name=debian-gimp-latest \
-           ewsdocker/debian-gimp:latest lms-setup  
+               -v ${HOME}/.config/docker/debian-gimp:/root \
+               --name=debian-gimp \
+           ewsdocker/debian-gimp lms-setup  
 
 ____  
 
@@ -76,7 +76,7 @@ ____
 
 **Executable scripts**  
 
-**ewsdocker/debian-gimp:latest**  
+**ewsdocker/debian-gimp**  
 
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -84,10 +84,10 @@ ____
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/Pictures:/pictures \
                -v ${HOME}/Artwork:/artwork \
-               -v ${HOME}/workspace-gimp-latest:/workspace \
-               -v ${HOME}/.config/docker/debian-gimp-latest:/root \
-               --name=debian-gimp-latest \
-           ewsdocker/debian-gimp:latest
+               -v ${HOME}/workspace-gimp:/workspace \
+               -v ${HOME}/.config/docker/debian-gimp:/root \
+               --name=debian-gimp \
+           ewsdocker/debian-gimp
 
 _____  
 

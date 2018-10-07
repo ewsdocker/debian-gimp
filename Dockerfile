@@ -90,6 +90,7 @@ RUN apt-get -y update \
                python-numpy-dbg \
                python-numpy-doc \
                speex \
+ && apt-get clean all \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
 
 # =========================================================================
@@ -98,7 +99,8 @@ COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
  && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-gimp-${LMSBUILD_VERSION}.desktop  
+ && chmod 600 /usr/local/share/applications/debian-gimp-${LMSBUILD_VERSION}.desktop \
+ && chmod 600 /usr/local/share/applications/debian-gimp.desktop  
 
 # =========================================================================
 
