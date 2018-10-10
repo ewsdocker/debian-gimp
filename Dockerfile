@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.5
+# @version 9.5.6
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-gimp
@@ -36,21 +36,21 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.3
+FROM ewsdocker/debian-base-gui:9.5.5
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.5"
+ENV LMSBUILD_VERSION="9.5.6"
 ENV LMSBUILD_NAME=debian-gimp 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
 ENV LMSBUILD_PARENT="gimp 5.2.11"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-base-gui:9.5.3"
+ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-base-gui:9.5.5"
 
 # =========================================================================
 
@@ -98,9 +98,7 @@ RUN apt-get -y update \
 COPY scripts/. /
 
 RUN chmod +x /usr/bin/lms/* \
- && chmod 775 /usr/local/bin/* \
- && chmod 600 /usr/local/share/applications/debian-gimp-${LMSBUILD_VERSION}.desktop \
- && chmod 600 /usr/local/share/applications/debian-gimp.desktop  
+ && chmod 775 /usr/local/bin/*  
 
 # =========================================================================
 
