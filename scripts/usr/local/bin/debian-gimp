@@ -44,7 +44,7 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /etc/localtime:/etc/localtime:ro \
            -v ${HOME}/Pictures:/pictures \
            -v ${HOME}/Artwork:/artwork \
-           -v ${HOME}/workspace-gimp:/workspace \
+           -v ${HOME}/workspace/debian/gimp/latest:/workspace \
            -v ${HOME}/.config/docker/debian-gimp-latest:/root \
            --name=debian-gimp-latest \
        ewsdocker/debian-gimp

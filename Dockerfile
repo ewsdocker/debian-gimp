@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.7
+# @version 9.5.8
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-gimp
@@ -36,21 +36,21 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.6
+FROM ewsdocker/debian-kaptain:9.5.4
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.7"
+ENV LMSBUILD_VERSION="9.5.8"
 ENV LMSBUILD_NAME=debian-gimp 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
 ENV LMSBUILD_PARENT="gimp 5.2.11"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-base-gui:9.5.6"
+ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-kaptain:9.5.4"
 
 # =========================================================================
 
