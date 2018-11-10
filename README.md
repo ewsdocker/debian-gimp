@@ -77,7 +77,7 @@ _____
                -v ${HOME}/Pictures:/pictures \
                -v ${HOME}/Artwork:/artwork \
                -v ${HOME}/.config/docker/debian-gimp-9.5.9:/root \
-               -v ${HOME}/.config/docker/debian-gimp-latest/workspace:/workspace \
+               -v ${HOME}/.config/docker/debian-gimp-9.5.9/workspace:/workspace \
                --name=debian-gimp-9.5.9 \
            ewsdocker/debian-gimp:9.5.9  
 
@@ -109,7 +109,7 @@ ____
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
                -v ${HOME}/.config/docker/debian-gimp-9.5.10:/root \
-               -v ${HOME}/.config/docker/debian-gimp-latest/workspace:/workspace \
+               -v ${HOME}/.config/docker/debian-gimp-9.5.10/workspace:/workspace \
                --name=debian-gimp-9.5.10 \
            ewsdocker/debian-gimp:9.5.10 lms-setup  
 
