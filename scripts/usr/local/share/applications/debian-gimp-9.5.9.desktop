@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/home/jay/.local/bin/docker-deb-start-0.0.4 debian-gimp:9.5.8
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.4 debian-gimp:9.5.9
 Icon=/home/jay/.local/share/icons/gimp.png
 Type=Application
 Terminal=false
-GenericName=Gimp (9.5.8)
-Name=Gimp (9.5.8)
+GenericName=Gimp (9.5.9)
+Name=Gimp (9.5.9)
 StartupNotify=false
 Categories=Graphics
