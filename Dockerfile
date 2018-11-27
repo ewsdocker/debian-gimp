@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.9
+# @version 9.5.10
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-gimp
@@ -36,21 +36,21 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-kaptain:9.5.4
+FROM ewsdocker/debian-kaptain:9.5.4-gtk3
 
 MAINTAINER Jay Wheeler <ewsdocker@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.9"
+ENV LMSBUILD_VERSION="9.5.10"
 ENV LMSBUILD_NAME=debian-gimp 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
 ENV LMSBUILD_PARENT="gimp 5.2.11"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-kaptain:9.5.4"
+ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, debian-kaptain:9.5.4-gtk3"
 
 # =========================================================================
 
@@ -76,7 +76,6 @@ RUN apt-get -y update \
                libbluray-bdj \
                libcupsfilters1 \
                libgail-common \
-               libgtk-3-bin \
                liblcms2-utils \
                libpaper-utils \
                librsvg2-bin \
@@ -107,8 +106,9 @@ RUN chmod +x /usr/bin/lms/* \
 VOLUME /artwork
 VOLUME /pictures
 VOLUME /workspace
+VOLUME /www
 
-WORKDIR /workspace
+#WORKDIR /workspace
 
 # =========================================================================
 

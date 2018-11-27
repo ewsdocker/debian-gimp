@@ -1,7 +1,14 @@
-### ewsdocker/debian-gimp:9.5.9  
+### ewsdocker/debian-gimp:9.5.10  
 
 **Gimp (complete) in a Debian-based Docker image.**  
-____  
+
+#### GitHub Current Source is EDGE
+The _9.5.10_ version is now under development. It will show itself as _EDGE_ in Docker hub Tags.  
+
+The _9.5.10_ and _EDGE_ tags are development versions of GitHub source and debian-firefox Docker image, respectively.  
+
+For working source/image, stick with the current release tag (_9.5.9_).  
+
 **NOTE**  
 **ewsdocker/debian-gimp** is designed to be used on a Linux system configured to support **Docker user namespaces** .  
 
@@ -28,16 +35,16 @@ ____
        ewsdocker/debian-gimp lms-setup  
 
 ____  
-**ewsdocker/debian-gimp:9.5.9**  
+**ewsdocker/debian-gimp:9.5.10**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.9:/root \
-               --name=debian-gimp-9.5.9 \
-           ewsdocker/debian-gimp:9.5.9 lms-setup  
+               -v ${HOME}/.config/docker/debian-gimp-9.5.10:/root \
+               --name=debian-gimp-9.5.10 \
+           ewsdocker/debian-gimp:9.5.10 lms-setup  
 
 ____  
 
@@ -68,7 +75,7 @@ ____
            ewsdocker/debian-gimp
 
 _____  
-**ewsdocker/debian-gimp:9.5.9**
+**ewsdocker/debian-gimp:9.5.10**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -76,10 +83,10 @@ _____
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/Pictures:/pictures \
                -v ${HOME}/Artwork:/artwork \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.9:/root \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.9/workspace:/workspace \
-               --name=debian-gimp-9.5.9 \
-           ewsdocker/debian-gimp:9.5.9  
+               -v ${HOME}/.config/docker/debian-gimp-9.5.10:/root \
+               -v ${HOME}/.config/docker/debian-gimp-9.5.10/workspace:/workspace \
+               --name=debian-gimp-9.5.10 \
+           ewsdocker/debian-gimp:9.5.10  
 
 ____  
 

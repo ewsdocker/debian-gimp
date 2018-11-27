@@ -42,10 +42,11 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
+           -v ${HOME}/.config/docker/debian-gimp-latest:/root \
+           -v ${HOME}/.config/docker/debian-gimp-latest/workspace:/workspace \
            -v ${HOME}/Pictures:/pictures \
            -v ${HOME}/Artwork:/artwork \
-           -v ${HOME}/workspace/debian/gimp/latest:/workspace \
-           -v ${HOME}/.config/docker/debian-gimp-latest:/root \
+           --mount source=www,target=/www \
            --name=debian-gimp-latest \
        ewsdocker/debian-gimp
 
