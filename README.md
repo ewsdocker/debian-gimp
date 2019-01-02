@@ -3,11 +3,11 @@
 **Gimp (complete) in a Debian-based Docker image.**  
 
 #### GitHub Current Source is EDGE
-The _9.6.0_ version is now under development. It will show itself as _EDGE_ in Docker hub Tags.  
+The _9.6.1_ version is now under development. It will show itself as _EDGE_ in Docker hub Tags.  
 
-The _9.6.0_ and _EDGE_ tags are development versions of GitHub source and debian-firefox Docker image, respectively.  
+The _9.6.0_ and _EDGE_ tags are development versions of GitHub source and Docker image, respectively.  
 
-For working source/image, stick with the current release tag (_9.5.9_).  
+For working source/image, stick with the current release tag (_9.6.0_).  
 
 **NOTE**  
 **ewsdocker/debian-gimp** is designed to be used on a Linux system configured to support **Docker user namespaces** .  
