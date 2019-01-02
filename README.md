@@ -1,11 +1,11 @@
-### ewsdocker/debian-gimp:9.5.10  
+### ewsdocker/debian-gimp:9.6.0  
 
 **Gimp (complete) in a Debian-based Docker image.**  
 
 #### GitHub Current Source is EDGE
-The _9.5.10_ version is now under development. It will show itself as _EDGE_ in Docker hub Tags.  
+The _9.6.0_ version is now under development. It will show itself as _EDGE_ in Docker hub Tags.  
 
-The _9.5.10_ and _EDGE_ tags are development versions of GitHub source and debian-firefox Docker image, respectively.  
+The _9.6.0_ and _EDGE_ tags are development versions of GitHub source and debian-firefox Docker image, respectively.  
 
 For working source/image, stick with the current release tag (_9.5.9_).  
 
@@ -35,16 +35,16 @@ ____
        ewsdocker/debian-gimp lms-setup  
 
 ____  
-**ewsdocker/debian-gimp:9.5.10**  
+**ewsdocker/debian-gimp:9.6.0**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.10:/root \
-               --name=debian-gimp-9.5.10 \
-           ewsdocker/debian-gimp:9.5.10 lms-setup  
+               -v ${HOME}/.config/docker/debian-gimp-9.6.0:/root \
+               --name=debian-gimp-9.6.0 \
+           ewsdocker/debian-gimp:9.6.0 lms-setup  
 
 ____  
 
@@ -75,7 +75,7 @@ ____
            ewsdocker/debian-gimp
 
 _____  
-**ewsdocker/debian-gimp:9.5.10**
+**ewsdocker/debian-gimp:9.6.0**
   
     docker run -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -83,10 +83,10 @@ _____
                -v /etc/localtime:/etc/localtime:ro \
                -v ${HOME}/Pictures:/pictures \
                -v ${HOME}/Artwork:/artwork \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.10:/root \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.10/workspace:/workspace \
-               --name=debian-gimp-9.5.10 \
-           ewsdocker/debian-gimp:9.5.10  
+               -v ${HOME}/.config/docker/debian-gimp-9.6.0:/root \
+               -v ${HOME}/.config/docker/debian-gimp-9.6.0/workspace:/workspace \
+               --name=debian-gimp-9.6.0 \
+           ewsdocker/debian-gimp:9.6.0  
 
 ____  
 
@@ -100,33 +100,33 @@ The _bleeding-edge_ development tag **edge** is the next **Docker** tag release.
 
 For the _very brave_, if an _edge_ tag is available, the following  instructions will download, rename and install the _edge_ version.  
 
-Good luck.  Please remember that just because it is named **9.5.10** does **not** mean that it is no longer bleeding-**edge**. Don't expect it to work.
+Good luck.  Please remember that just because it is named **9.6.1** does **not** mean that it is no longer bleeding-**edge**. Don't expect it to work.
 
 ____  
 
 **ewsdocker/debian-gimp:edge**  
 
-**edge** is the **Docker** tag for the **GitHub** development version, and future **Docker** release tag, **9.5.10**.  
+**edge** is the **Docker** tag for the **GitHub** development version, and future **Docker** release tag, **9.6.1**.  
 
     docker pull ewsdocker/debian-gimp:edge
-    docker tag ewsdocker/debian-gimp:edge ewsdocker/debian-gimp:9.5.10
+    docker tag ewsdocker/debian-gimp:edge ewsdocker/debian-gimp:9.6.1
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.10:/root \
-               -v ${HOME}/.config/docker/debian-gimp-9.5.10/workspace:/workspace \
-               --name=debian-gimp-9.5.10 \
-           ewsdocker/debian-gimp:9.5.10 lms-setup  
+               -v ${HOME}/.config/docker/debian-gimp-9.6.1:/root \
+               -v ${HOME}/.config/docker/debian-gimp-9.6.1/workspace:/workspace \
+               --name=debian-gimp-9.6.1 \
+           ewsdocker/debian-gimp:9.6.1 lms-setup  
 
 optional step (clean up the **docker images**):
 
     docker rmi ewsdocker/debian-gimp:edge  
 
-To create and run the container, run **Gimp (9.5.10)** from the _Graphics_ category of any desktop menu, or the following should work from the command-line:
+To create and run the container, run **Gimp (9.6.1)** from the _Graphics_ category of any desktop menu, or the following should work from the command-line:
 
-    ~/.local/bin/debian-gimp:9.5.10  
+    ~/.local/bin/debian-gimp:9.6.1  
 
 ____  
 

@@ -8,7 +8,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.10
+# @version 9.6.0
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-gimp
@@ -42,10 +42,10 @@ docker run -e DISPLAY=unix${DISPLAY} \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v /etc/localtime:/etc/localtime:ro \
-           -v ${HOME}/.config/docker/debian-gimp-9.5.10:/root \
-           -v ${HOME}/.config/docker/debian-gimp-9.5.10/workspace:/workspace \
+           -v ${HOME}/.config/docker/debian-gimp-9.6.0:/root \
+           -v ${HOME}/.config/docker/debian-gimp-9.6.0/workspace:/workspace \
            -v ${HOME}/Pictures:/pictures \
            -v ${HOME}/Artwork:/artwork \
            --mount source=www,target=/www \
-           --name=debian-gimp-9.5.10 \
-       ewsdocker/debian-gimp:9.5.10
+           --name=debian-gimp-9.6.0 \
+       ewsdocker/debian-gimp:9.6.0
