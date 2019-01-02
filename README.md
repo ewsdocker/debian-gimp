@@ -147,7 +147,7 @@ Obviously, these **Docker** images tend to be rather large compared to most **Do
 
 ____  
 
-**Copyright © 2018. EarthWalk Software.**  
+**Copyright © 2018, 2019. EarthWalk Software.**  
 **Licensed under the GNU General Public License, GPL-3.0-or-later.**  
 
 This file is part of **ewsdocker/debian-gimp**.  
