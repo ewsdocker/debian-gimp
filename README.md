@@ -5,7 +5,7 @@
 #### GitHub Current Source is EDGE
 The _9.6.1_ version is now under development. It will show itself as _EDGE_ in Docker hub Tags.  
 
-The _9.6.0_ and _EDGE_ tags are development versions of GitHub source and Docker image, respectively.  
+The _9.6.1_ and _EDGE_ tags are development versions of GitHub source and Docker image, respectively.  
 
 For working source/image, stick with the current release tag (_9.6.0_).  
 
